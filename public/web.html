@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="./image/logo.jpg" type="image/icon type">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./style/web.css">
+    <title>Velox - Website Development</title>
+</head>
+<body>
+    <header class="contact-header">
+        <div class="contact-info">
+            <span>📞 +91-234-567-8901</span>
+            <span>✉️ info@velox.com</span>
+        </div>
+    </header>
+    <nav class="navbar">
+        <button type="button"><a href="./deshboard.html">Goto Home</a></button>
+        <h1>Website Development Works</h1>
+    </nav>
+
+    <section id="work-items">
+        <!-- Work items will be dynamically added here -->
+    </section>
+
+    <script>
+        fetch('/api/work-items')
+        .then(response => response.json())
+        .then(data => {
+            const workItemsContainer = document.getElementById('work-items');
+            data.forEach(item => {
+                const workItemDiv = document.createElement('div');
+                workItemDiv.className = 'work-item';
+
+                // Image container
+                const imageContainer = document.createElement('div');
+                imageContainer.className = 'image-container';
+                const image = document.createElement('img');
+                image.src = `/uploads/${item.image_path}`;
+                image.alt = "Work Image";
+                imageContainer.appendChild(image);
+
+                // Content container (title, description, and link)
+                const contentContainer = document.createElement('div');
+                contentContainer.className = 'content-container';
+                const title = document.createElement('h2');
+                title.textContent = item.title;
+                const description = document.createElement('p');
+                description.textContent = item.description;
+                const link = document.createElement('a');
+                link.href = item.website_url;
+                link.target = "_blank";
+                link.textContent = "Visit Website";
+
+                contentContainer.appendChild(title);
+                contentContainer.appendChild(description);
+                contentContainer.appendChild(link);
+
+                // Append both image and content containers to the work-item
+                workItemDiv.appendChild(imageContainer);
+                workItemDiv.appendChild(contentContainer);
+
+                // Add work-item to the parent container
+                workItemsContainer.appendChild(workItemDiv);
+            });
+        })
+        .catch(error => console.error('Error fetching work items:', error));
+    </script>
+</body>
+</html>

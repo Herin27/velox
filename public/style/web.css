@@ -1,0 +1,415 @@
+/* Reset styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+}
+
+.contact-header {
+    position: fixed; /* Fixes the header at the top */
+    top: 0;
+    left: 0;
+    width: 100%; /* Ensures it spans the full width */
+    background: linear-gradient(to right, #A8E6CF, #DCEDC2); 
+    color: #2f4f4f;
+    padding: 0.5rem 2rem; /* Adjust padding for more space */
+    z-index: 10; /* Places it above other content */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Adds a shadow for depth */
+}
+
+.contact-header .contact-info {
+    display: flex;
+    justify-content: flex-end; /* Aligns items to the right */
+    gap: 2rem; /* Space between items */
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.contact-header .contact-info span:hover {
+    text-decoration: underline; /* Adds underline effect on hover */
+}
+
+.navbar {
+    position: fixed;
+    top: 37px; /* Positioning navbar below header */
+    left: 0;
+    width: 100%;
+    background-color: #fff;
+    color: #000;
+    padding: 1rem 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    z-index: 999;
+}
+
+.navbar button {
+    position: absolute;
+    left: 20px;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    background: linear-gradient(to right, #A8E6CF, #DCEDC2); 
+    color: #2f4f4f;
+    border: none;
+    cursor: pointer;
+    font-weight: 700;
+}
+
+.navbar button a {
+    color: #000;
+    font-weight: 500;
+    text-decoration: none;
+}
+
+.navbar h1 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #000;
+    margin: 0;
+}
+
+/* Work Section */
+#work-section {
+    padding: 2rem;
+    width: 100%;
+    margin: 80px auto;
+}
+
+/* Work Item */
+.work-item {
+    display: flex;
+    margin-left: 10px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 1.5rem;
+    overflow: hidden;
+}
+
+
+/* Image */
+.work-item-image {
+    width: 250px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+/* Work Item Content */
+.work-item-content {
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    gap: 1.5rem;
+}
+
+/* Work Item Details */
+.work-item-details {
+    flex-grow: 1;
+}
+
+/* Title */
+.work-item-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 0.5rem;
+}
+
+/* Description */
+.work-item-description {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 1rem;
+    line-height: 1.5;
+}
+
+/* View Website Button */
+.view-button {
+    width: 100%;
+    background-color: #33ccff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.view-button:hover {
+    background: linear-gradient(to right, #A8E6CF, #DCEDC2); 
+    transform: translateY(-3px);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 1024px) {
+    .navbar h1 {
+        font-size: 1.6rem;
+    }
+
+    .navbar button {
+        font-size: 1rem;
+        padding: 0.5rem 1rem;
+    }
+
+    .contact-header .contact-info {
+        font-size: 0.9rem;
+        gap: 1.5rem;
+    }
+
+    .work-item {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .work-item-image {
+        width: 100%;
+        height: auto;
+        margin-bottom: 1rem;
+    }
+
+    .work-item-content {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .view-button {
+        width: 100%;
+        margin-top: 1rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        position: fixed;
+        top: 30px; /* Positioning navbar below header */
+        left: 0;
+        width: 100%;
+        background-color: #fff;
+        color: #000;
+        padding: 1rem 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        z-index: 999;
+    }
+    .navbar h1 {
+        font-size: 0.7rem;
+    }
+
+    .navbar button {
+        font-size: 0.9rem;
+        padding: 0.5rem 1rem;
+    }
+
+    .contact-header .contact-info {
+        font-size: 0.8rem;
+        gap: 1rem;
+    }
+
+    .work-item {
+        flex-direction: column;
+    }
+
+    .work-item-image {
+        width: 100%;
+        height: auto;
+        margin-bottom: 1rem;
+    }
+
+    .work-item-content {
+        text-align: center;
+        gap: 0;
+    }
+
+    .view-button {
+        width: 100%;
+        margin-top: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .navbar {
+        position: fixed;
+        top: 30px; /* Positioning navbar below header */
+        left: 0;
+        width: 100%;
+        background-color: #fff;
+        color: #000;
+        padding: 1rem 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        z-index: 999;
+    }
+    
+    .navbar button {
+        font-size: 0.4rem;
+        padding: 0.5rem 1rem;
+    }
+
+    .navbar h1 {
+        font-size: 0.5rem;
+    }
+
+    .contact-header .contact-info {
+        font-size: 0.7rem;
+        gap: 1rem;
+    }
+
+    .work-item-title {
+        font-size: 1.2rem;
+    }
+
+    .work-item-description {
+        font-size: 0.9rem;
+    }
+
+    .view-button {
+        padding: 0.5rem 1rem;
+    }
+}
+
+
+@media (max-width: 300px) {
+    .contact-header {
+        position: fixed; /* Fixes the header at the top */
+        top: 0;
+        left: 0;
+        width: 100%; /* Ensures it spans the full width */
+        background: linear-gradient(to right, #33ccff, #ff99cc);
+        color: #000000;
+        padding: 0.3rem 2rem; /* Adjust padding for more space */
+        z-index: 10; /* Places it above other content */
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Adds a shadow for depth */
+    }
+    .navbar {
+        position: fixed;
+        top: 14px; /* Positioning navbar below header */
+        left: 0;
+        width: 100%;
+        background-color: #fff;
+        color: #000;
+        padding: 0.7rem 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        z-index: 999;
+        height: 5px;
+    }
+    
+    .navbar button {
+        font-size: 0.4rem;
+        padding: 0.3rem 0.5rem;
+    }
+
+    .navbar h1 {
+        font-size: 0.5rem;
+    }}
+
+/* Work Items Section Styling */
+#work-items {
+    padding: 40px 10px;
+    justify-items: center;
+    margin-top: 100px;
+}
+
+.work-item {
+   
+    background-color: #f9f9f9;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 100%; /* Full width of the container */
+    margin: 10 auto; /* Centers the item */
+}
+
+/* Image Container */
+.image-container {
+    width: 350px;
+    margin-bottom: 15px;
+}
+
+.image-container img {
+    width: 350px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+}
+
+/* Content Container (Title, Description, Link) */
+.content-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-left: 100px;
+    
+}
+
+.work-item h2 {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: #2c3e50;
+    margin-bottom: 0.8rem;
+    margin-top: 0;
+    line-height: 1.4;
+    letter-spacing: 1px;
+    text-transform: capitalize;
+}
+
+.work-item p {
+    font-size: 1.1rem;
+    color: #7f8c8d;
+    margin-bottom: 1.5rem;
+    line-height: 1.7;
+    text-align: justify;
+    padding: 0 10px;
+    font-family: 'Arial', sans-serif;
+}
+
+.work-item a {
+    display: inline-block;
+    text-decoration: none;
+    color: #2f4f4f;
+    font-weight: 600;
+    padding: 12px 20px;
+    background-color: #ecf0f1;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    font-size: 1rem;
+    margin-top: 15px;
+}
+
+.work-item a:hover {
+    background: linear-gradient(to right, #A8E6CF, #DCEDC2); 
+    color: #2f4f4f;
+    text-decoration: underline;
+}
+
+@media (min-width: 768px) {
+    /* Adjust layout for larger screens */
+    #work-items {
+        grid-template-columns: repeat(2, 1fr); /* Two items per row */
+    }
+}
+
+@media (min-width: 1024px) {
+    /* Adjust layout for even larger screens */
+    #work-items {
+        grid-template-columns: repeat(3, 1fr); /* Three items per row */
+    }
+}

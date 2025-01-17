@@ -1,0 +1,128 @@
+use login_app;
+
+select * from users;
+
+CREATE DATABASE velox_db;
+
+use velox_db;
+
+select * from users;
+
+CREATE TABLE users (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    email VARCHAR(255) NOT NULL,
+    username VARCHAR(50) NOT NULL UNIQUE,
+    password VARCHAR(255) NOT NULL,
+    role ENUM('user', 'admin') NOT NULL,
+    signup_date DATETIME DEFAULT CURRENT_TIMESTAMP
+);
+CREATE TABLE clients (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(255) NOT NULL,
+    image VARCHAR(255) NOT NULL
+);
+
+drop table sliders;
+select * from user1;
+
+CREATE TABLE users_login (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  email VARCHAR(255) NOT NULL,
+  role VARCHAR(50),
+  username VARCHAR(255) UNIQUE NOT NULL,
+  password VARCHAR(255) NOT NULL
+);
+
+select * from users_login;
+
+CREATE TABLE sliders (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    title VARCHAR(255) NOT NULL,
+    description TEXT NOT NULL,
+    image VARCHAR(255) NOT NULL
+);
+
+
+
+CREATE TABLE about_us (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    title VARCHAR(255) NOT NULL,
+    description TEXT NOT NULL,
+    image_url VARCHAR(255) NOT NULL
+);
+drop table users;
+
+select * from about_us;
+
+
+drop table slider_images;
+select * from slider_images;
+
+TRUNCATE table slider_images;
+
+
+create database signup;
+
+CREATE DATABASE youtube_clone;
+
+USE youtube_clone;
+
+CREATE TABLE videos (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    title VARCHAR(255) NOT NULL,
+    description TEXT,
+    video_url VARCHAR(255) NOT NULL,
+    thumbnail_url VARCHAR(255),
+    uploaded_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+
+
+
+
+
+
+
+
+
+
+
+
+CREATE DATABASE velox_db;
+
+use velox_db;
+
+select * from users;
+
+CREATE TABLE users (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    username VARCHAR(255) NOT NULL,
+    email VARCHAR(255) NOT NULL,
+    role VARCHAR(50) NOT NULL,
+    password VARCHAR(255) NOT NULL,
+    day VARCHAR(50) NOT NULL
+);
+
+CREATE TABLE sliders (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    image_url VARCHAR(255),
+    title VARCHAR(100),
+    description TEXT
+);
+
+drop table completed_work;
+
+select * from completed_work;uu
+
+CREATE TABLE completed_work (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    title VARCHAR(255) NOT NULL,
+    description TEXT NOT NULL,
+    image_path VARCHAR(255) NOT NULL,  -- Path to the uploaded image file
+    website_url VARCHAR(255)            -- URL link to the work (optional)
+);
+
+
+select * from work_items;
+
+

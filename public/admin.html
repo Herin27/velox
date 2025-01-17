@@ -1,0 +1,235 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="icon" href="./image/logo.jpg" type="image/icon type">
+    <!-- Font Awesome CDN-->
+    <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" as="style" onload="this.rel='stylesheet'">
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" as="style" onload="this.rel='stylesheet'">
+
+    <!-- Google Font -->
+    <link
+            href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap"
+            rel="stylesheet"
+    />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,1,0" />
+    <script src="script.js" defer></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./style/admin.css">
+    <title>Velox - Admin Dashboard</title>
+</head>
+<body>
+<header>
+    <div class="h_admin">
+        <h1>Admin Dashboard</h1>
+    </div>
+    <button><a href="./login.html">Logout</a></button>
+</header>
+
+<nav>
+    <img src="./image/logo.jpg" alt="logo"/>
+    <ul>
+        <li><a href="#">Dashboard</a></li>
+        <li><a href="#add-user-form">Manage Users</a></li>
+        <li><a href="#a_content">Manage Content</a></li>
+        <li>
+            <a href="#" class="parent-toggle">Forms</a>
+            <ul class="nested-list">
+                <li><a href="#add-slider">slider</a></li>
+                <li><a href="#add-work">Website Form</a></li>
+                <li><a href="#add-work">CCTV Camara</a></li>
+            </ul>
+        </li>
+<!--        <li><a href="#">Feedbacks</a></li>-->
+        <li><a href="./login.html">Logout</a></li>
+    </ul>
+</nav>
+
+<main>
+    <h2>Welcome, Herin</h2>
+    <div class="dashboard-stats">
+        <div class="card">
+            <h2><strong id="user-count">Loading...</strong></h2>
+            <p>Total number of users</p>
+        </div>
+        <div class="card">
+            <h2><strong id="user-counts">Loading...</strong></h2>
+            <p>Total Users</p>
+        </div>
+        <div class="card">
+            <h2 id="activePosts"><strong id="user-counts1">Loading...</strong></h2>
+            <p>Active Posts</p>
+        </div>
+        <div class="card">
+            <h2 id="pendingRequests"><strong id="user-counts2">Loading...</strong></h2>
+            <p>Pending Requests</p>
+        </div>
+    </div>
+
+    <hr>
+
+<!--   manage users-->
+    <section id="users">
+    <h1>Manage Users</h1>
+
+    <!-- Add New User Form -->
+
+
+        <form id="add-user-form">
+            <h1>Add New User</h1>
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="role">Role:</label>
+            <select id="role" name="role" required>
+                <option value="admin">Admin</option>
+                <option value="user">User</option>
+            </select>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+
+            <label for="day">Day:</label>
+            <input type="text" id="day" name="day" required>
+
+            <button type="submit">Add User</button>
+        </form>
+
+
+        <hr>
+
+    <!-- List of Users -->
+    <h2>User List</h2>
+    <div id="user-list">
+        <!-- User Entries Will Be Dynamically Added Here -->
+    </div>
+    </section>
+
+    <hr>
+    <section id="a_content">
+    <h1>Manage Content</h1>
+
+    <!-- Form to Add New Content -->
+    <div id="add-content-form">
+
+        <form id="content-form">
+            <h1>Add New Content</h1>
+            <label for="title">Title:</label>
+            <input type="text" id="title" name="title" required>
+
+            <label for="body">Body:</label>
+            <textarea id="body" name="body" required></textarea>
+
+            <button type="submit">Add Content</button>
+        </form>
+    </div>
+    </section>
+
+    <!-- List of Content -->
+    <div id="content-list">
+        <h2>Content List</h2>
+        <table id="content-table">
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>Title</th>
+                <th>Body</th>
+                <th>Actions</th>
+            </tr>
+            </thead>
+            <tbody>
+            <!-- Dynamic content rows will be inserted here -->
+            </tbody>
+        </table>
+    </div>
+
+    <hr>
+
+
+
+<!--    add slider-->
+
+
+    <section id="add-slider" class="form-container">
+
+                    <form action="/add-slider" method="post" enctype="multipart/form-data">
+                        <h1>Add Slider Item</h1>
+                        <br>
+                        <label for="title">Title:</label>
+                        <input type="text" id="title" name="title" required>
+
+                        <label for="description">Description:</label>
+                        <textarea id="description" name="description" required></textarea>
+
+                        <label for="image">Image:</label>
+                        <input type="file" id="image" name="image" accept="image/*" required>
+
+                        <button type="submit">Add Slider Item</button>
+                    </form>
+    </section>
+                <section id="slider-list" class="slider-list-container">
+                    <h1>Manage Sliders</h1>
+                    <hr>
+                    <div id="slider-items">
+                        <!-- Dynamic content will be inserted here by JavaScript -->
+                    </div>
+                </section>
+
+    <hr>
+
+    <section id="add-work">
+            <form action="/add-work" method="POST" enctype="multipart/form-data">
+                <h1>Add Website Item</h1>
+                <br>
+
+                <label for="title">Title:</label>
+                <input type="text" id="title" name="title" required><br><br>
+
+                <label for="description">Description:</label>
+                <textarea id="description" name="description" required></textarea><br><br>
+
+                <label for="image">Image:</label>
+                <input type="file" id="image" name="image" accept="image/*" required><br><br>
+
+                <label for="website_url">Website URL:</label>
+                <input type="url" id="website_url" name="website_url" required><br><br>
+
+                <button type="submit">Add Work Item</button>
+            </form>
+    </section>
+    <hr>
+    <h1>Manage Completed Website</h1>
+
+        <section id="work-items">
+            <!-- Work items will be dynamically added here -->
+        </section>
+
+    <hr>
+
+
+
+
+
+    </div>
+</main>
+
+<script src="./js/admin.js"></script>
+</body>
+</html>
+

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="./image/logo.jpg" type="image/icon type">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./style/web.css">
+    <title>Velox - New & Refurbished Laptop Selling</title>
+</head>
+<body>
+    <header class="contact-header">
+        <div class="contact-info">
+            <span>📞 +91-234-567-8901</span>
+            <span>✉️ info@velox.com</span>
+        </div>
+    </header>
+    <nav class="navbar">
+        <button type="button"><a href="./deshboard.html">Goto Home</a></button>
+        <h1>New & Refurbished Laptops</h1>
+    </nav>
+
+    <section id="work-section">
+        <!-- Work items will be dynamically inserted here -->
+    </section>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            fetch("/work-items")
+                .then(response => response.json())
+                .then(data => {
+                    const workSection = document.getElementById("work-section");
+                    data.forEach(item => {
+                        const workItem = document.createElement("div");
+                        workItem.className = "work-item";
+                        workItem.innerHTML = `
+                            <div class="work-item-content">
+                                <img src="${item.image_path}" alt="${item.title}" class="work-item-image">
+                                <div class="work-item-details">
+                                    <h2 class="work-item-title">${item.title}</h2>
+                                    <p class="work-item-description">${item.description}</p>
+                                    <a href="${item.website_url}" target="_blank">
+                                        <button class="view-button">View Website</button>
+                                    </a>
+                                </div>
+                            </div>
+                        `;
+                        workSection.appendChild(workItem);
+                    });
+                })
+                .catch(error => console.error("Error fetching work items:", error));
+        });
+    </script>
+</body>
+</html>
