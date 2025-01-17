@@ -2,5 +2,13 @@
   "version": 2,
   "name": "velox",
   "builds": [{ "src": "./server.js", "use": "@vercel/node" }],
-  "routes": [{ "handle": "filesystem", "src": "/(.*)", "dest": "/server.js" }]
+  "routes": [
+    {
+      "handle": "filesystem"
+    },
+    {
+      "src": "/api/(.*)",
+      "dest": "/api/index.js"
+    }
+  ]
 }
