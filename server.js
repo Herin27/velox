@@ -16,7 +16,7 @@ const port = 2000;
 
 // MySQL Connection
 const db = mysql.createConnection({
-    host: '127.0.0.1',
+    host: 'localhost',
     user: 'root',
     password: 'tiger',
     database: 'velox_db',
@@ -35,8 +35,6 @@ db.connect((err) => {
     if (err) throw err;
     console.log('Database connected!');
 });
-
-
 
 // Check if username already exists
 app.post('/check-username', (req, res) => {
