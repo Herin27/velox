@@ -9,6 +9,9 @@ const app = express();
 const fs = require('fs');
 const session = require("express-session");
 
+const Sequelize = require('sequelize');
+const SequelizeStore = require('connect-session-sequelize')(session.Store);
+
 const port = 2000;
 
 // MySQL Connection
@@ -19,6 +22,23 @@ const db = mysql.createConnection({
     database: 'velox_db',
     port: 3308,
 });
+
+const sequelize = new Sequelize('herin', 'root', 'tiger', {
+    host: '127.0.0.1',
+    port: 3308,
+    dialect: 'mysql'
+});
+
+app.use(
+    session({
+        secret: '123!#@herin',
+        store: new SequelizeStore({ db: sequelize }),
+        resave: false,
+        saveUninitialized: false
+    })
+);
+
+sequelize.sync();
 
 // Middleware
 app.use(bodyParser.urlencoded({ extended: true }));
