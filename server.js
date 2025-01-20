@@ -20,7 +20,7 @@ const db = mysql.createConnection({
     user: 'root',
     password: 'tiger',
     database: 'velox_db',
-    port: 3308,
+    port: 3306,
 });
 
 // Middleware
@@ -305,7 +305,7 @@ app.get('/contact', (req, res) => {
 // Handle form submission and send the email
 app.post('/send-email', (req, res) => {
     const userEmail = req.body.email; // Sender's email from the form
-    const userMessage = req.body.message; // User's message from the form
+    const userMessage = "your service is very useful or impresive"; // User's message from the form
     const message = 'thank you for your feedback';
 
     // Create a transporter using Gmail's SMTP server
@@ -327,10 +327,12 @@ app.post('/send-email', (req, res) => {
     transporter.sendMail(mailOptions, (error, info) => {
         if (error) {
             console.log('Error:', error);
-            res.send('Error sending email');
+            // res.send('Error sending email');
+            alert("Error sending email");
         } else {
             console.log('Email sent: ' + info.response);
-            res.send('Email sent successfully!');
+            // res.send('Email sent successfully!');
+            alert("'Email sent successfully!");
         }
     });
 
@@ -346,10 +348,12 @@ app.post('/send-email', (req, res) => {
     transporter.sendMail(mymailOptions, (error, info) => {
         if (error) {
             console.log('Error:', error);
-            res.send('Error sending email');
+            // res.send('Error sending email');
+            alert("Error sending email");
         } else {
             console.log('Email sent: ' + info.response);
-            res.send('your message send successfully');
+            // res.send('your message send successfully');
+            alert("your message send successfully");
         }
     });
 });

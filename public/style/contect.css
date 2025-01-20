@@ -14,7 +14,7 @@ body {
     top: 0;
     left: 0;
     width: 100%; /* Ensures it spans the full width */
-    background: linear-gradient(to right, #A8E6CF, #DCEDC2);
+    background: rgba(239, 190, 0, 0.6);
     color: #2F4F4F;
     padding: 0.5rem 2rem; /* Adjust padding for more space */
     z-index: 10; /* Places it above other content */
@@ -280,7 +280,7 @@ button:hover {
     padding: 10px;
 
     font-size: 14px;
-    background: linear-gradient(to right, #A8E6CF, #DCEDC2);
+    background: rgba(239, 190, 0, 0.6);
     color: #2f4f4f;
     box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1); /* Adds a shadow for depth */
     z-index: 10; /* Places it above other elements if necessary */
